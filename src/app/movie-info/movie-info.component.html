@@ -1,0 +1,64 @@
+<!-- Header -->
+<div fxLayout="column" style="overflow-x: hidden;">
+    <div>
+      <mat-toolbar color="primary" class="top-level-header" fullscreen>
+        <mat-toolbar-row>
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip mat-raised-button (click)="back()" style="cursor: pointer;"
+              >Back</mat-chip
+            >
+          </mat-chip-list>
+          <span class="example-spacer"></span>
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip
+              mat-raised-button
+              (click)="Logout()"
+              style="cursor: pointer;"
+              >Logout</mat-chip
+            >
+          </mat-chip-list>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+  
+  
+    <!-- /* CAROUSEL CARDS */ -->
+    <div fxLayout="row wrap" class="crouseldiv">
+    <mdb-carousel  class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+    [animation]="'slide'">
+    <mdb-carousel-item *ngFor="let item of FeaturedDataofMovies; let i = index">
+        <div  fxLayoutGap="20px"  class="MovieLists" fxLayout="row">
+        <mat-card class="Carasoulcards"  style="padding:0;border-radius: 10px;" *ngFor="let card of FeaturedDataofMovies; let cardIndex = index" >
+          <mat-card-header  class="CarasoulCardheader">
+          </mat-card-header>
+          <div fxLayout="row" fxLayoutAlign="space-between end" style="padding: 1em;">
+            <p>{{card.Moviename}}</p>
+          <div style="margin-bottom:15px;">
+            <ngb-rating [(rate)]="card.Starrating"  style="color: #FFDE72 ;font-size: 20px;"
+            ></ngb-rating>
+        </div>
+        </div>
+        </mat-card>
+        </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+  </div>
+  
+  <!-- SELECTED MOVIE CARD -->
+  
+    <div fxFlexAlign="center" class="ClickedMovieCards" >
+    <mat-card style="padding:0;border-radius: 10px;" >
+      <mat-card-header  class="ClickedCardheader">
+      </mat-card-header>
+      <mat-card-content style="padding:5px !important;">
+        <div fxLayout="row" fxLayoutAlign="space-between end" style="padding: 1em" >
+          <p>{{Movienamevar}}</p>
+        <div style="margin-bottom:15px;">
+    <ngb-rating [(rate)]="Ratingsvar" style="color: #FFDE72 ;font-size: 20px;"
+    ></ngb-rating>
+      </div>
+      </div>    </mat-card-content>
+    </mat-card>
+  </div>
+  </div>
+  

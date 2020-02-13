@@ -1,0 +1,73 @@
+<!-- header -->
+<mat-toolbar class="top-level-header" fullscreen> </mat-toolbar>
+
+
+<!-- Signup form -->
+<div class="main-container">
+  <mat-card class="sub-container">
+    <div>
+      <form (ngSubmit)="onSubmit()">
+        <!-- FULLNAME FIELD -->
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            placeholder="Full Name"
+            onkeydown="return /[a-z]/i.test(event.key)"
+            [formControl]="fullname"
+            required
+          />
+          <mat-error>This field is required</mat-error> </mat-form-field
+        ><br />
+        <!-- EMAIL FIELD -->
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            placeholder="Enter your email"
+            [formControl]="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <br />
+        <!-- PASSWORD FIELD -->
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            minlength=8
+            placeholder="Password"
+            [type]="hide ? 'password' : 'text'"
+            [formControl]="password"
+            required
+          />
+          <mat-error *ngIf="password.invalid">{{
+            getPassowordErrorMessage()
+          }}</mat-error>
+
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-hint
+            >Atleast 8 character long. Must have an uppercase letter and an
+            integer</mat-hint
+          >
+           </mat-form-field
+        ><br /><br />
+        <!-- SIGNUP BUTTON -->
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          style="background-color:#416EFF"
+        >
+          Sign up
+        </button>
+      </form>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,81 @@
+/* TOP HEADER */
+.top-level-header {
+    top: 0;
+    margin: 0;
+    left: 0;
+    height: 40px;
+    background-color: #FFDE72;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-chip.mat-standard-chip {
+    background-color: #fffdfd !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  /* *********************************************************************************************************** */
+  
+  /* SUB HEADER */
+  .sub-header {
+    left: 0;
+    background-color: #E6E6E6;
+    height: 250px;
+  }
+  .example-spacer2 {
+    flex: 0.5 0.5 auto;
+  }
+  .sub-header > .Searchbox {
+    border: none;
+    width: 26%;
+    height: 13%;
+    border-radius: 20px;
+    padding: 1em;
+  }
+  ::placeholder {
+    color: black;
+    opacity: 3;
+  }
+  /* *********************************************************************************************************** */
+  
+  /* SORTING Row */
+  .Subsort {
+    margin-top: 10px;
+  }
+  .Sort > .sortRows {
+    background-color: #E6E6E6 !important;
+  }
+  /* *********************************************************************************************************** */
+  
+  /*MOVIE Cards */
+  .MovieLists {
+    margin-top: 40px;
+    margin-left: 20%;
+    margin-right: 10%;
+    place-content: baseline !important;
+  }
+  .MovieLists > .MovieCards {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .Cardheader {
+    background-color: #E6E6E6;
+    padding: 81px;
+    border-top: 10px;
+  }
+  .LoadmoreButton {
+    margin-top: 50px;
+  }
+  /* *********************************************************************************************************** */
+  
+  
+  /* MEDIA QUERY FOR SEARCH BAR */
+  @media   (max-width: 1100px) {
+    .sub-header > .Searchbox {
+      width: auto;
+   
+    }
+  
+  }

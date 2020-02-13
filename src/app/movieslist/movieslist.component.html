@@ -1,0 +1,75 @@
+<!-- Header -->
+<div fxLayout="column" style="overflow: auto;">
+    <div>
+      <mat-toolbar color="primary" class="top-level-header" fullscreen>
+        <mat-toolbar-row>
+          <span class="example-spacer"></span>
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip
+              mat-raised-button
+              (click)="Logout()"
+              style="cursor: pointer;"
+              >Logout</mat-chip
+            >
+          </mat-chip-list>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    <!-- SUB header -->
+    <div>
+      <mat-toolbar class="sub-header">
+        <span class="example-spacer2"></span>
+        <input
+          type="text"
+          class="Searchbox"
+          placeholder="Search"
+          [(ngModel)]="term"
+        />
+      </mat-toolbar>
+    </div>
+    <div
+      fxLayout="row"
+      fxLayoutAlign="center center"
+      fxLayoutGap="15px"
+      class="Sort"
+    >
+      <p class="Subsort"><b>Sort:</b></p>
+      <mat-chip class="sortRows" (click)="SortByName()">By name</mat-chip>
+      <mat-chip class="sortRows" (click)="SortByYear()">By year</mat-chip>
+      <mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
+    </div>
+    <!-- MovieCards -->
+    <div
+      fxLayout="row wrap"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px"
+      class="MovieLists"
+    >
+      <mat-card
+        *ngFor="let cards of Moviesvar | slice: start:end | filter: term"
+        class="MovieCards"
+        (click)="movieInfo(cards)"
+        style="padding:0"
+      >
+        <mat-card-header class="Cardheader" style="border-top: 10px;"> </mat-card-header>
+        <div fxLayout="row" fxLayoutAlign="space-between end" style="padding:1em">
+          <p>{{ cards.Moviename }}</p>
+          <div style="margin-bottom:15px;">
+            <ngb-rating
+              style="color: #FFDE72 ;font-size: 20px;"
+              [(rate)]="cards.Starrating"
+            ></ngb-rating>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <br />
+    <mat-chip
+      (click)="loadmoreMovies(cards)"
+      fxFlexAlign="center"
+      style="      background-color: #d3cfcf !important; margin-bottom: 50px; "
+    >
+      Load more
+    </mat-chip>
+  </div>
+  
