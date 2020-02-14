@@ -6,21 +6,24 @@
 <div class="main-container">
   <mat-card class="sub-container">
     <div>
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" >
         <!-- FULLNAME FIELD -->
         <mat-form-field class="form-field">
           <input
             matInput
             placeholder="Full Name"
-            onkeydown="return /[a-z]/i.test(event.key)"
             [formControl]="fullname"
+            pattern="[a-zA-Z ]*"
             required
           />
-          <mat-error>This field is required</mat-error> </mat-form-field
+          <mat-error *ngIf="fullname.invalid">{{ getUsernameMessage() }}</mat-error> 
+
+          </mat-form-field
         ><br />
         <!-- EMAIL FIELD -->
         <mat-form-field class="form-field">
           <input
+          type="email"
             matInput
             placeholder="Enter your email"
             [formControl]="email"

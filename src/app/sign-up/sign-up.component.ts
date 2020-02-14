@@ -10,8 +10,12 @@ import { MatSnackBar } from "@angular/material";
 })
 export class SignUpComponent implements OnInit {
   // FORM CONTROLS FOR INPUT FILEDS
-  fullname = new FormControl("", [Validators.required]);
-  email = new FormControl("", [Validators.required, Validators.email]);
+  fullname = new FormControl("", [Validators.required,
+    Validators.pattern(/^[a-zA-Z ]*$/),
+  ]    )
+  email = new FormControl("", [Validators.required, Validators.email,
+  	Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z]+$')]
+    );
   password = new FormControl("", [
     Validators.required,
     Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/),
@@ -22,12 +26,22 @@ export class SignUpComponent implements OnInit {
   constructor(private router: Router, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {}
+  // USERNAME VALIDATOR
+  getUsernameMessage(){
+  return this.fullname.hasError("required")
+  ? "You must enter a Username"
+  : this.fullname.hasError("pattern")
+  ? "Not a valid username"
+  : "";
+}
 
   // EMAIL Validator
   getErrorMessage() {
     return this.email.hasError("required")
       ? "You must enter a EmailID"
-      : this.email.hasError("email")
+      // : this.email.hasError("email")
+      // ? "Not a valid email"
+      : this.email.hasError("pattern")
       ? "Not a valid email"
       : "";
   }
@@ -47,7 +61,8 @@ export class SignUpComponent implements OnInit {
       this.password.value == "" ||
       this.password.hasError("pattern") ||
       this.email.hasError("email") ||
-      this.password.value.length < 8
+      this.password.value.length < 8 ||
+      this.fullname.hasError("pattern")
     ) {
       const message = "Plase fill all the fields correctly ";
       const action = "Try again";
