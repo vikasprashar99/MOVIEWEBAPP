@@ -48,14 +48,15 @@
   
   /*MOVIE Cards */
   .MovieLists {
-    margin-top: 40px;
-    margin-left: 20%;
+    margin-top: 10px;
+    /* margin-left: 20%;
+    margin-right: 10%; */
+    margin-left: 12%;
     margin-right: 10%;
-    place-content: baseline !important;
   }
   .MovieLists > .MovieCards {
     width: 300px;
-    height: auto;
+    height: 250px;
     margin-top: 20px;
     cursor: pointer;
     border-radius: 10px;
