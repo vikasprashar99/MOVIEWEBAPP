@@ -18,6 +18,7 @@ background-color: #FFDE72;
 /* CAROUSEL CARDS */
 .MovieLists{
   margin-top: 25px;
+  width: auto;
 }
 .MovieLists > .Carasoulcards{
   height: 90%;
@@ -48,10 +49,17 @@ carousel-indicators {
 /* *********************************************************************************************************** */
 
 
-/* MEDIA QUERY FOR CLICKED CARASOUL */
+/* MEDIA QUERY FOR CLICKED Card */
 @media   (max-width: 600px) {
   .ClickedMovieCards{
     width: auto;
 }
+}
+
+/* MEDIA QUERY FOR CARASOUL(extra large screens) */
+@media   (min-width: 2500px) {
+  .Carasoul{
+margin-left: 460px;}
 
 }
+

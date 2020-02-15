@@ -23,10 +23,10 @@
   
   
     <!-- /* CAROUSEL CARDS */ -->
-    <div fxLayout="row wrap" class="crouseldiv">
+    <div fxLayout="row wrap" >
     <mdb-carousel  class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
     [animation]="'slide'">
-    <mdb-carousel-item *ngFor="let item of FeaturedDataofMovies; let i = index">
+    <mdb-carousel-item *ngFor="let item of FeaturedDataofMovies; let i = index" class="Carasoul">
         <div  fxLayoutGap="20px"  class="MovieLists" fxLayout="row">
         <mat-card class="Carasoulcards"  style="padding:0;border-radius: 10px;" *ngFor="let card of FeaturedDataofMovies; let cardIndex = index" >
           <mat-card-header  class="CarasoulCardheader">
