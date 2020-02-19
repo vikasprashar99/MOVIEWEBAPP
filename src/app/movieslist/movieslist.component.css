@@ -80,3 +80,11 @@
     }
   
   }
+
+  /* MEDIA QUERY FOR Cards(extra large screens) */
+@media   (min-width: 2500px) {
+  .MovieLists > .MovieCards {
+  margin-right: 30px
+  }
+
+}
