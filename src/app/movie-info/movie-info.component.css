@@ -34,6 +34,16 @@ background-color: #FFDE72;
   padding: 81px;
   border-top: 10px;
 }
+
+.stars{
+  margin-bottom:20px;
+}
 /* *********************************************************************************************************** */
 
-  
+    /* MEDIA QUERY FOR Star ratings(small screens) */
+@media   (min-width: 1024px) {
+  .stars{
+    margin-bottom:40px;
+  }
+
+}
