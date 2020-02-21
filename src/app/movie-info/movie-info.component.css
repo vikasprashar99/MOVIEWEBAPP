@@ -45,5 +45,15 @@ background-color: #FFDE72;
   .stars{
     margin-bottom:40px;
   }
-
 }
+
+
+/* MEDIA QUERY FOR CLICKED Card */
+@media   (max-width: 600px) {
+  .ClickedMovieCards{
+    width: auto;
+  }
+  }
+  
+  
+  
