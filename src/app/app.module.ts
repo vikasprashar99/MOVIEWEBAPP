@@ -35,6 +35,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -50,6 +53,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     BrowserAnimationsModule,
     MatButtonModule,MatSnackBarModule,
     MatTooltipModule,
+    CarouselModule,
     MatListModule,
     MatChipsModule,
     NgbModule,
@@ -62,6 +66,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     StarRatingModule.forRoot() ,  
     MDBBootstrapModule.forRoot(),    
     MatCarouselModule.forRoot(),
+    NgxCarouselModule,
     MatCardModule,
     Ng2SearchPipeModule,
     MatFormFieldModule,

@@ -39,30 +39,6 @@
       <mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
     </div>
     <!-- MovieCards -->
-    <!-- <div
-      fxLayout="row wrap"
-      fxLayoutGap="20px"
-      class="MovieLists"
-    >
-      <mat-card
-        *ngFor="let cards of Moviesvar | slice: start:end | filter: term"
-        class="MovieCards"
-        (click)="movieInfo(cards)"
-        style="padding:0"
-      >
-        <mat-card-header class="Cardheader" style="border-top: 10px;"> </mat-card-header>
-        <div fxLayout="row" fxLayoutAlign="space-between end" style="padding:1em">
-          <p>{{ cards.Moviename }}</p>
-          <div style="margin-bottom:15px;">
-            <ngb-rating
-              style="color: #FFDE72 ;width: 85px;"
-              [(rate)]="cards.Starrating"
-            ></ngb-rating>
-          </div>
-        </div>
-      </mat-card>
-    </div> -->
-    
     <div fxLayout="column" fxLayoutAlign="space-between center" >
       <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" class="MovieLists"
       >

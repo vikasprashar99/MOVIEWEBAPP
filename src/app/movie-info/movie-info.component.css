@@ -15,24 +15,6 @@ background-color: #FFDE72;
 }
 /* *********************************************************************************************************** */
 
-/* CAROUSEL CARDS */
-.MovieLists{
-  margin-top: 25px;
-  width: auto;
-}
-.MovieLists > .Carasoulcards{
-  height: 90%;
-    width: 20%;
-}
-.CarasoulCardheader{
-  background-color: #E6E6E6;
-  padding:75px;
-  border-top: 10px;
-}
-carousel-indicators {
-  display: none !important;
-}
-/* *********************************************************************************************************** */
 
 /* CLICKED MOVIE CARD  */
 .ClickedMovieCards{
@@ -46,20 +28,12 @@ carousel-indicators {
   padding:128px;
   border-top: 10px;
 }
+
+.Cardheader {
+  background-color: #E6E6E6;
+  padding: 81px;
+  border-top: 10px;
+}
 /* *********************************************************************************************************** */
 
-
-/* MEDIA QUERY FOR CLICKED Card */
-@media   (max-width: 600px) {
-  .ClickedMovieCards{
-    width: auto;
-}
-}
-
-/* MEDIA QUERY FOR CARASOUL(extra large screens) */
-@media   (min-width: 2500px) {
-  .Carasoul{
-margin-left: 460px;}
-
-}
-
+  

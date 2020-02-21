@@ -19,30 +19,32 @@
           </mat-chip-list>
         </mat-toolbar-row>
       </mat-toolbar>
-    </div>
+    </div><br>
   
   
-    <!-- /* CAROUSEL CARDS */ -->
-    <div fxLayout="row wrap" >
-    <mdb-carousel  class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-    [animation]="'slide'">
-    <mdb-carousel-item *ngFor="let item of FeaturedDataofMovies; let i = index" class="Carasoul">
-        <div  fxLayoutGap="20px"  class="MovieLists" fxLayout="row">
-        <mat-card class="Carasoulcards"  style="padding:0;border-radius: 10px;" *ngFor="let card of FeaturedDataofMovies; let cardIndex = index" >
-          <mat-card-header  class="CarasoulCardheader">
-          </mat-card-header>
-          <div fxLayout="row" fxLayoutAlign="space-between end" style="padding: 1em;">
-            <p>{{card.Moviename}}</p>
-          <div style="margin-bottom:15px;">
-            <ngb-rating [(rate)]="card.Starrating"  style="color: #FFDE72 ;font-size: 20px;"
-            ></ngb-rating>
-        </div>
-        </div>
-        </mat-card>
-        </div>
-    </mdb-carousel-item>
-  </mdb-carousel>
-  </div>
+ <!-- CARASOUL -->
+        <owl-carousel-o [options]="customOptions" >
+        <ng-template carouselSlide *ngFor="let cards of FeaturedDataofMovies;" 
+        >
+          <mat-card
+          style="padding: 0;height: 228px;"
+
+        >
+          <mat-card-header class="Cardheader" style="border-top: 10px;"> </mat-card-header>
+          <div fxLayout="row" fxLayoutAlign="space-between end" style="padding:1em">
+            <p >{{ cards.Moviename }}</p>
+            <div style="margin-bottom:20px;">
+              <ngb-rating
+                style="color: #FFDE72 ;width: 85px;"
+                [(rate)]="cards.Starrating"
+              ></ngb-rating>
+            </div>
+          </div>
+        </mat-card>          
+        </ng-template> 
+      </owl-carousel-o>
+    
+    
   
   <!-- SELECTED MOVIE CARD -->
   
